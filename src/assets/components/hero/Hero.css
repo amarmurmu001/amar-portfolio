@@ -1,0 +1,15 @@
+.hero{
+    width: 100%;
+    height: calc(100vh - 71px);
+}
+.section_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+.section_1 h1{
+    font-size: 220px;
+    color: #222222;
+}

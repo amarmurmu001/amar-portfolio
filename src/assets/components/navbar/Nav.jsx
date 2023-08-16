@@ -30,11 +30,11 @@ const Nav = () => {
         </li>
         <li>
           {" "}
-          <a href="">Projects</a>{" "}
+          <a href="/Projects">Projects</a>{" "}
         </li>
         <li>
           {" "}
-          <a href="Contact"> Contact</a>{" "}
+          <a href="/Contact"> Contact</a>{" "}
         </li>
       </ul>
       <div className="hamburger" onClick={handleClick}>

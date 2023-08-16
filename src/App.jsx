@@ -1,16 +1,20 @@
-import './App.css'
-import About from './assets/components/about/About'
-import Hero from './assets/components/hero/Hero'
-import Nav from './assets/components/navbar/Nav'
+import Home from './routes/Home'
+import Projects from './routes/Projects'
+import About from './routes/About'
+import Contact from './routes/Contact'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
 
   return (
-    <div className="container">
-    <Nav />
-    <Hero />
-    <About />
-    </div>
+    <>
+    <Routes>
+      <Route path='/'element={<Home/>} />
+      <Route path='/Projects'element={<Projects/>} />
+      <Route path='/About'element={<About/>} />
+      <Route path='/Contect'element={<Contact/>} />
+    </Routes>
+    </>
   )
 }
 

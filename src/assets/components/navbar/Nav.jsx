@@ -1,17 +1,41 @@
-import React from 'react'
-import './Nav.css'
+import React, { useState } from "react";
+import "./Nav.css";
+import { FaBars, FaTimes } from "react-icons/fa";
 const Nav = () => {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
   return (
     <div className="navbar">
+      <a href="">
         <h1>amar.</h1>
-        <ul>
-            <li> <a href="">home</a> </li>
-            <li> <a href="#about_section">about</a> </li>
-            <li> <a href="">what i do</a> </li>
-            <li> <a href="">my works</a> </li>
-        </ul>
+      </a>
+      <ul className={click ? "nav-menu active" : "nav-menu"}>
+        <li>
+          {" "}
+          <a href="/">Home</a>{" "}
+        </li>
+        <li>
+          {" "}
+          <a href="/About">About</a>{" "}
+        </li>
+        <li>
+          {" "}
+          <a href="">Projects</a>{" "}
+        </li>
+        <li>
+          {" "}
+          <a href="Contact"> Contact</a>{" "}
+        </li>
+      </ul>
+      <div className="hamburger" onClick={handleClick}>
+        {click ? (
+          <FaTimes size={20} style={{ color: "white" }} />
+        ) : (
+          <FaBars size={20} style={{ color: "white" }} />
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

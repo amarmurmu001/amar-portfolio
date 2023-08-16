@@ -39,9 +39,9 @@ const Nav = () => {
       </ul>
       <div className="hamburger" onClick={handleClick}>
         {click ? (
-          <FaTimes size={20} style={{ color: "white" }} />
+          <FaTimes size={20} style={{ color: "#222222" }} />
         ) : (
-          <FaBars size={20} style={{ color: "white" }} />
+          <FaBars size={20} style={{ color: "#222222" }} />
         )}
       </div>
     </div>

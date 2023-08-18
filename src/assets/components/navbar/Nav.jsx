@@ -26,15 +26,15 @@ const Nav = () => {
         </li>
         <li>
           {" "}
-          <a href="/About">About</a>{" "}
+          <a href="">About</a>{" "}
         </li>
         <li>
           {" "}
-          <a href="/Projects">Projects</a>{" "}
+          <a href="">Projects</a>{" "}
         </li>
         <li>
           {" "}
-          <a href="/Contact"> Contact</a>{" "}
+          <a href=""> Contact</a>{" "}
         </li>
       </ul>
       <div className="hamburger" onClick={handleClick}>

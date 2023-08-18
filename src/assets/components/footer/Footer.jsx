@@ -7,9 +7,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-container">
         <div className="left">
-          <a href="/">
-            <h1>amar.</h1>
-          </a>
+          <a href="https://amarmurmu.me">Link To Website</a>
         </div>
         <div className="right">
             <FaGithub size={30} />

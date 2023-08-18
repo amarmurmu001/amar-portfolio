@@ -1,0 +1,14 @@
+.footer{
+    width: 100%;
+    padding: 1rem ;
+
+}
+.footer-container{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.right{
+    display: flex;
+    gap: 1rem;
+}

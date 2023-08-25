@@ -26,7 +26,7 @@ const Nav = () => {
         </li>
         <li>
           {" "}
-          <a href="">About</a>{" "}
+          <a href="/About">About</a>{" "}
         </li>
         <li>
           {" "}

@@ -16,7 +16,7 @@ const Nav = () => {
   window.addEventListener('scroll', changeColor);
   return (
     <div className={color? "navbar navbar-bg":"navbar"}>
-      <a href="">
+      <a href="/">
         <h1>amar.</h1>
       </a>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -26,15 +26,15 @@ const Nav = () => {
         </li>
         <li>
           {" "}
-          <a href="">About</a>{" "}
+          <a href="/about">About</a>{" "}
         </li>
         <li>
           {" "}
-          <a href="">Projects</a>{" "}
+          <a href="/projects">Projects</a>{" "}
         </li>
         <li>
           {" "}
-          <a href=""> Contact</a>{" "}
+          <a href="/contact"> Contact</a>{" "}
         </li>
       </ul>
       <div className="hamburger" onClick={handleClick}>

@@ -23,6 +23,9 @@
 font-size: 1.2rem;
 font-weight: bold;
 }
+.navbar a h1{
+  padding-left:1rem;
+}
 .hamburger{
   display: none;
 }

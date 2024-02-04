@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Route, Routes } from 'react-router-dom';
 import "./Nav.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 const Nav = () => {
@@ -20,23 +21,19 @@ const Nav = () => {
         <h1>amar.</h1>
       </a>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
-        <li>
-          {" "}
-          <a href="/">Home</a>{" "}
-        </li>
-        <li>
-          {" "}
-          <a href="/about">About</a>{" "}
-        </li>
-        <li>
-          {" "}
-          <a href="/projects">Projects</a>{" "}
-        </li>
-        <li>
-          {" "}
-          <a href="/contact"> Contact</a>{" "}
-        </li>
-      </ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
       <div className="hamburger" onClick={handleClick}>
         {click ? (
           <FaTimes size={20} style={{ color: "#222222" }} />

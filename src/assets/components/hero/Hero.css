@@ -1,6 +1,6 @@
 .mask{
     width: 100%;
-    height: 90vh;
+    height: 72vh;
     position: relative;
 }
 .mask .bg-img{
@@ -40,8 +40,8 @@
     .hero .content h1{
         font-size: 5rem;
        }
-    .mask{
+    /* .mask{
         height: 80vh;
-    }   
+    }    */
      
 }

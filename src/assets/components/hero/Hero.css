@@ -40,5 +40,8 @@
     .hero .content h1{
         font-size: 5rem;
        }
+    .mask{
+        height: 80vh;
+    }   
      
 }

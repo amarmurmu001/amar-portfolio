@@ -29,36 +29,36 @@ font-weight: bold;
   display: none;
 }
 
-@media  (max-width: 1040px){
-  .nav-menu{
+@media (max-width: 1040px) {
+  .nav-menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100vh;
     background: #e9e9e9;
-    position: absolute;
+    position: fixed; /* Use 'fixed' positioning */
     top: 0;
-    left: -100%;
+    left: -100%; /* Move the menu off-screen */
     z-index: 3;
-    transition: 0.3s;
-
+    transition: left 0.3s; /* Apply transition to 'left' property */
   }
+
   .nav-menu.active {
-    left: 0;
+    left: 0; /* Move the menu into view */
   }
-  .nav-menu li{
 
+  .nav-menu li {
     padding: 1rem 0;
   }
-  .nav-menu li a{
 
-    font-size: 2rem;}
-.hamburger{
-  display: initial;
-  padding-right: 1rem;
-  z-index: 4;
+  .nav-menu li a {
+    font-size: 2rem;
+  }
 
-}
-  
+  .hamburger {
+    display: initial;
+    padding-right: 1rem;
+    z-index: 4;
+  }
 }

@@ -12,7 +12,7 @@ const Hero = () => {
           <h1>amar</h1>
         </div>
         <div className="character">
-          <img src={amarbg} alt="" srcset="" />
+          <img src={amarbg} alt="Amar Murmu"  />
         </div>
       </div>
     </div>

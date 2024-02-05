@@ -21,16 +21,16 @@ const Nav = () => {
         <h1>amar.</h1>
       </a>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <li>
+          <li onClick={handleClick}>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li onClick={handleClick}>
             <Link to="/projects">Projects</Link>
           </li>
-          <li>
+          <li onClick={handleClick}>
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li onClick={handleClick}>
             <Link to="/contact">Contact</Link>
           </li>
         </ul>

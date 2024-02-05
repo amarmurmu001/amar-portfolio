@@ -1,18 +1,18 @@
 import React from "react";
 import "./Hero.css";
-import bg from "../../img/bg.jpg";
-import { Link } from "react-router-dom";
+import amarbg from "../../img/amar-bg.png";
 
 const Hero = () => {
   return (
     <div className="hero">
-      <div className="mask">
-        <img className="bg-img" alt="bg-img" src={bg} />
-       </div> 
-      <div className="content">
-        <h1>hello!</h1>
-        <div>
-          <Link to='/Projects'><button className="btn-glitch">PROJECTS</button></Link>
+      <div className="container">
+        <div className="text-container">
+          <h1>amar</h1>
+          <h1>amar</h1>
+          <h1>amar</h1>
+        </div>
+        <div className="character">
+          <img src={amarbg} alt="" srcset="" />
         </div>
       </div>
     </div>

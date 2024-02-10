@@ -6,7 +6,7 @@ import amarbg from "../../img/amar-bg.png";
 
 const Hero = () => {
   useEffect(() => {
-    gsap.from(".character", { duration: 2, y: '30%', ease: 'expo.out', });
+    gsap.from(".character", { duration: 2, y: '100%', ease: 'expo.out',scale:0.6, });
 
     gsap.to(".spread1", { duration: 1, y: -15, ease: 'power2.out' }); 
     gsap.to(".spread2", { duration: 1, y: 15, ease: 'power2.out' });

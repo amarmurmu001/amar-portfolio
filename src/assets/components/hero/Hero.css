@@ -14,8 +14,16 @@
     left: 50%;
     transform: translate(-50%,-50%);
 }
+.spread1{
+    color: gray;
+}
+.spread2{
+    color: black;
+}
 .text-container h1{
-    font-size: 40rem;
+    font-size: 30rem;
+    position: absolute;transform: translate(-50%,-50%);
+
 
 }
 .character {

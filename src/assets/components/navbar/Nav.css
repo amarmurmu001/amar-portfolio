@@ -6,7 +6,7 @@
   z-index: 10;
   width: 100%;
   height: 90px;
-  position: sticky;
+  position: fixed;
 }
 .navbar-bg{
   background-color: #e9e9e9;

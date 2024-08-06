@@ -1,67 +1,77 @@
-.about {
-   
-    text-align: left;
-    padding: 90px 2rem;
-    height: 100vh;
-  }
-  .intro{
-  }
+
+
+.container-about {
+  /* height: 100%; */
+  /* background-color: aqua; */
+  display:flex ;
+  flex-direction: column;
+  align-items: center;
+}
+.headline{
+margin-top: 10rem;
+font-size: 1.5rem;
+}
+.slogan{
+  font-size: 5vw;
+}
+.bio{
+  display: flex;
+  margin-bottom:10rem;
+  margin-top:5rem;
+  margin-left: 11vw;
+  margin-right: 11vw;
+  gap: 50px;
+}
+.profile-img img{
+  width: 25vw;
+}
+.bio-text{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.bio-headline{
+  font-size: 3vw;
+  font-weight: 700;
+}
+.bio-normal{
+  font-size: 1.29vw;
+}
+
+@media screen and (max-width:700px) {
+
+
+
+.headline{
+margin-top: 10rem;
+font-size: 1rem;
+}
+
+.slogan{
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.bio{
+  display: flex;
+  margin-top:20px;
+  gap: 10px;
+  flex-direction: column;
   
-  .intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .intro .highlight {
-    color: gray; /* or any other accent color */
-  }
-  
-  .intro p {
-    margin-bottom: 2rem;
-    color: #aaa; /* Lighter text color for the description */
-  }
-  
-  .btn {
-    background-color: gray;
-    color: black;
-    border: none;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    font-size: 1rem;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: gainsboro;
-  }
-  
-  .stats {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 3rem;
-    font-size: 1.2rem;
-  }
-  
-  .bio {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3rem;
-  }
-  
-  .bio .education, .bio .work-experience {
-    flex: 1;
-    margin: 0 1rem;
-  }
-  
-  .companies-worked {
-    margin-top: 3rem;
-  }
-  
-  /* Add responsive design */
-  @media (max-width: 768px) {
-    .bio {
-      flex-direction: column;
-    }
-  }
-  
+}
+.profile-img img{
+  width: 300px;
+}
+.bio-text{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.bio-headline{
+  font-size: 30px;
+  font-weight: 700;
+}
+.bio-normal{
+  font-size: 18px;
+}
+
+}

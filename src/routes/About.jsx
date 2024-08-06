@@ -1,28 +1,35 @@
 import React from 'react';
-import './About.css'; // Ensure you have the CSS file named About.css
+import './About.css'; 
+import amarbg from "./../assets/img/amar-bg.png";
+
 
 const About = () => {
   return (
     <div className="about">
-      <div className="intro">
-        <h1>Hi, I am  <br /><span className="highlight">Amar Murmu</span></h1>
-        <p>UI/UX Designer with a passion for designing beautiful and functional user experiences...</p>
-        <button className="btn">Hire Me</button>
-        {/* Social Media Icons */}
-      </div>
-      <div className="stats">
-        {/* Numbers like "10+ Years Experience" */}
-      </div>
-      <div className="bio">
-        <div className="education">
-          {/* Education Details */}
+      <div className='container-about'>
+        <div className='headline'>
+          About me
         </div>
-        <div className="work-experience">
-          {/* Work Experience Details */}
+        <div className='slogan'>
+          Exploring the depths of Creativity
         </div>
-      </div>
-      <div className="companies-worked">
-        {/* Company Logos */}
+        <div className='bio'>
+          <div className='profile-img'>
+            <img src={amarbg} alt="" srcset="" />
+          </div>
+          <div className='bio-text'>
+            <div className='bio-headline'>
+              Hellooo! i'm Amar Murmu..
+            </div>
+            <div className='bio-normal'>
+              A web designer from India with 3 years of experience.
+              Specializing in Figma, I create visually stunning and user-friendly websites. 
+              My design philosophy focuses on seamless user experiences. 
+              Check out my portfolio for a glimpse of my work, 
+              and let's bring your digital visions to life!
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

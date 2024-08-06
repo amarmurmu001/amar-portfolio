@@ -9,7 +9,6 @@ import Footer from "./assets/components/footer/Footer.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
   <div className="main">
-
     <Nav />
     <App />
     <Footer />

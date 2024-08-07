@@ -1,3 +1,4 @@
+//Home.jsx
 import React from 'react'
 import Hero from '../assets/components/hero/Hero'
 const Home = () => {

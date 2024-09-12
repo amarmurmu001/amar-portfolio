@@ -1,27 +1,29 @@
 import React from 'react'
 import './About.css'
+import amarbg from "../../../assets/img/amar-bg.png";
 
 const About = () => {
   return (
-    <div className="about_section" id="about_section">
-        <h1>learn more about me</h1>
-        <div className="section_2">
-
-            <img src="https://amarmurmu.me/assets/img/me.png" alt="Amar Murmu"  />
-
-            <p>Hi there! I am Amar Murmu, and I am a Graphic designer, Web developer & 3D artist with over 2 years of experience. I have a Diploma's degree in Computer Science and Engineering from Silli Polytechnic, Ranchi. <br />
-
-I have worked on a variety of projects ranging from simple portfolio to full-stack ecommerce projects and many more. I am skilled in Blender, C, C++ & Java programming language, Audacity for sound designing, Adobe Photoshop & Illustrator for UI/UX & graphics, and Capcut & Canva for video editing. Currently, I am learning React.js.
-
-<br />
-
-I am passionate about using my skills and knowledge to create innovative and engaging Web designs, and am always looking for new opportunities to learn and grow as a developer.
-
-<br />When any client hires me my only goal is to solve their problem with the best practical solution and delivering the best quality product.</p>
-
+    <div className="about">
+      <div className='headline'>About me</div>
+      <div className='slogan'>Exploring the depths of Creativity</div>
+      <div className='bio'>
+        <div className='profile-img'>
+          <img src={amarbg} alt="Amar Murmu" />
         </div>
+        <div className='bio-text'>
+          <div className='bio-headline'>Hellooo! I'm Amar Murmu..</div>
+          <div className='bio-normal'>
+            A web designer from India with 3 years of experience.
+            Specializing in Figma, I create visually stunning and user-friendly websites. 
+            My design philosophy focuses on seamless user experiences. 
+            Check out my portfolio for a glimpse of my work, 
+            and let's bring your digital visions to life!
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

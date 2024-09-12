@@ -35,6 +35,7 @@ const Hero = () => {
       gsap.to(".character", {
         duration: 0.5,
         x: mouseX * 20 - 10,
+        y: mouseY * 10 - 5, // Reduced vertical movement
       });
     };
 

@@ -1,47 +1,83 @@
-import React, { useState } from "react";
-import { Link, Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
 import "./Nav.css";
 import { FaBars, FaTimes } from "react-icons/fa";
+
 const Nav = () => {
   const [click, setClick] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
   const handleClick = () => setClick(!click);
 
-  const [color,setColor] = useState(false);
-  const changeColor = () =>{
-    if(window.scrollY>=100){
-      setColor(true)
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setClick(false); // Close mobile menu after clicking
     }
-    else
-    setColor(false);
-  }
-  window.addEventListener('scroll', changeColor);
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    scrollToSection('home');
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const navMenu = (
+    <ul className={click ? "nav-menu active" : "nav-menu"}>
+      <li onClick={() => scrollToSection('home')}>
+        <a href="#home">Home</a>
+      </li>
+      <li onClick={() => scrollToSection('projects')}>
+        <a href="#projects">Projects</a>
+      </li>
+      <li onClick={() => scrollToSection('about')}>
+        <a href="#about">About</a>
+      </li>
+      <li onClick={() => scrollToSection('contact')}>
+        <a href="#contact">Contact</a>
+      </li>
+    </ul>
+  );
+
   return (
-    <div className={color? "navbar navbar-bg":"navbar"}>
-      <a href="/">
-        <h1>amar.</h1>
-      </a>
-      <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <li onClick={handleClick}>
-            <Link to="/">Home</Link>
-          </li>
-          <li onClick={handleClick}>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li onClick={handleClick}>
-            <Link to="/about">About</Link>
-          </li>
-          <li onClick={handleClick}>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      <div className="hamburger" onClick={handleClick}>
-        {click ? (
-          <FaTimes size={20} style={{ color: "#222222" }} />
-        ) : (
-          <FaBars size={20} style={{ color: "#222222" }} />
-        )}
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="nav-content">
+        <a href="#home" onClick={handleLogoClick} className="logo">
+          <h1>amar.</h1>
+        </a>
+        {!isMobile && navMenu}
+        <div className="hamburger" onClick={handleClick}>
+          {click ? (
+            <FaTimes size={20} style={{ color: "#222222" }} />
+          ) : (
+            <FaBars size={20} style={{ color: "#222222" }} />
+          )}
+        </div>
       </div>
-    </div>
+      {isMobile && navMenu}
+    </nav>
   );
 };
 

@@ -1,6 +1,7 @@
 .footer{
     width: 100%;
-    padding: 2rem ;
+    padding: 2rem 0;
+    background-color: #f8f8f8;
     height: 90px;
     position: absolute;
     bottom: 0;
@@ -10,8 +11,29 @@
 display: flex;
 align-items: center;
 justify-content: space-between;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 2rem;
+box-sizing: border-box;
 }
 .right{
     display: flex;
     gap: 1rem;
+}
+.right a {
+    color: #222222;
+    transition: color 0.3s ease;
+}
+.right a:hover {
+    color: #444444;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    .left, .right {
+        text-align: center;
+    }
 }

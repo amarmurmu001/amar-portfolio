@@ -1,81 +1,126 @@
-:root {
-    --primary-color: #222222;
-    --secondary-color: #888888;
-    --background-color: #fff;
-  }
-  
-  .hero {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-color);
-    overflow: hidden;
-    position: relative;
-  }
-  
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.background-name {
+  position: absolute;
+  font-size: 20vw;
+  font-weight: 900;
+  opacity: 0.5;
+  z-index: 0;
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.background-glitch {
+  color: transparent;
+  -webkit-text-stroke: 2px #f0f0f0;
+}
+
+.text-container {
+  z-index: 2;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #222222;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #888888;
+}
+
+.date {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222222;
+}
+
+.body-image {
+  position: relative;
+  z-index: 1;
+}
+
+.body-image img {
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-base {
+  position: relative;
+  z-index: 1;
+}
+
+.glitch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
   .container {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    text-align: center;
   }
-  
+
+  .background-name {
+    font-size: 40vw;
+    top: 40%;
+  }
+
+  .body-image {
+    order: 2;
+    margin-bottom: 2rem;
+  }
+
+  .body-image img {
+    max-height: 50vh;
+  }
+
   .text-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
+    order: 3;
   }
-  
-  .spread1, .spread2 {
-    font-size: 30vw;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    white-space: nowrap;
+
+  .name {
+    font-size: 3rem;
   }
-  
-  .spread1 {
-    color: var(--secondary-color);
+
+  .title {
+    font-size: 1.2rem;
   }
-  
-  .spread2 {
-    color: var(--primary-color);
+
+  .date {
+    font-size: 1rem;
   }
-  
-  .character {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  
-  .character img {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-  }
-  
-  @media (max-width: 768px) {
-    .spread1, .spread2 {
-      font-size: 25vw;
-    }
-    .character img {
-      max-height: 70vh;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .spread1, .spread2 {
-      font-size: 35vw;
-    }
-    .character img {
-      max-height: 60vh;
-    }
-  }
+}

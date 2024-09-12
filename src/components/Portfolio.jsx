@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../assets/components/navbar/Nav';
 import Hero from '../assets/components/hero/Hero';
+import ScrollingText from '../assets/components/ScrollingText';
 import About from '../assets/components/about/About';
 import Projects from '../routes/Projects';
 import Contact from '../routes/Contact';
@@ -17,6 +18,8 @@ const Portfolio = () => {
       <section id="home">
         <Hero />
       </section>
+      
+      <ScrollingText />
       
       <div className="content-wrapper">
         <section id="about">

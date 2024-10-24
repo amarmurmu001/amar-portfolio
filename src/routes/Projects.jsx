@@ -14,7 +14,7 @@ const projects = [
     title: "Mines Game",
     description: "Mines game inspired by stake.",
     image: stakeimg,
-    link: "https://example.com/mines-game-2", 
+    link: "https://mines-game-lovat.vercel.app/", 
   },
 ];
 

@@ -1,114 +1,82 @@
-import React, { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import "./Hero.css";
-import bodyImage from "../../img/body.png"; // Import only the body image
-
-const GlitchText = ({ text, className = '' }) => {
-  const [glitchText, setGlitchText] = useState(text);
-
-  useEffect(() => {
-    const glitchInterval = setInterval(() => {
-      const glitchChars = 'アマルＡＭＲ';
-      const newText = text
-        .split('')
-        .map((char, index) => 
-          Math.random() > 0.8 ? glitchChars[Math.floor(Math.random() * glitchChars.length)] : char
-        )
-        .join('');
-      setGlitchText(newText);
-    }, 100);
-
-    return () => clearInterval(glitchInterval);
-  }, [text]);
-
-  return (
-    <div 
-      className={`glitch-text ${className}`}
-      style={{
-        textShadow: '2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000'
-      }}
-    >
-      {glitchText}
-    </div>
-  );
-};
+import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import './Hero.css';
 
 const Hero = () => {
-  const containerRef = useRef(null);
-  const [currentDate, setCurrentDate] = useState('');
+  const heroRef = useRef(null);
+  const particlesRef = useRef(null);
 
   useEffect(() => {
-    const container = containerRef.current;
+    // Create particles
+    const particlesContainer = particlesRef.current;
+    const numParticles = 50;
 
-    gsap.from(".body-image", { 
-      duration: 2, 
-      scale: 0.8,
-      ease: 'expo.out',
+    for (let i = 0; i < numParticles; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.setProperty('--x', `${Math.random() * 100}%`);
+      particle.style.setProperty('--y', `${Math.random() * 100}%`);
+      particle.style.setProperty('--duration', `${2 + Math.random() * 4}s`);
+      particle.style.setProperty('--delay', `${Math.random() * 2}s`);
+      particlesContainer.appendChild(particle);
+    }
+
+    // GSAP Animation for text reveal
+    const tl = gsap.timeline();
+    tl.from('.hero-title span', {
+      y: 100,
       opacity: 0,
-    });
-
-    gsap.from(".text-container", {
-      duration: 1.5,
+      duration: 1,
+      ease: 'power4.out',
+      stagger: 0.1
+    })
+    .from('.hero-subtitle', {
+      y: 20,
       opacity: 0,
-      x: -50,
-      ease: 'power3.out',
-      stagger: 0.2
-    });
-
-    gsap.from(".background-name", {
-      duration: 2,
-      opacity: 0,
-      scale: 1.2,
-      ease: 'power3.out',
-    });
-
-    const updateDate = () => {
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('en-US', { 
-        day: '2-digit', 
-        month: 'short',
-        year: 'numeric'
-      });
-      setCurrentDate(formattedDate);
-    };
-
-    updateDate();
-    const intervalId = setInterval(updateDate, 1000);
-
-    const handleMouseMove = (e) => {
-      const mouseX = e.clientX / window.innerWidth;
-      const mouseY = e.clientY / window.innerHeight;
-      
-      gsap.to(".body-image", {
-        duration: 0.5,
-        x: mouseX * 20 - 10,
-        y: mouseY * 20 - 10,
-      });
-    };
-
-    container.addEventListener('mousemove', handleMouseMove);
+      duration: 0.8,
+      ease: 'power3.out'
+    }, '-=0.4');
 
     return () => {
-      container.removeEventListener('mousemove', handleMouseMove);
-      clearInterval(intervalId);
+      while (particlesContainer.firstChild) {
+        particlesContainer.removeChild(particlesContainer.firstChild);
+      }
     };
   }, []);
 
   return (
-    <div className="hero">
-      <div className="container" ref={containerRef}>
-        <div className="background-name">
-          <GlitchText text="amar" className="background-glitch" />
-        </div>
-        <div className="text-container">
-          <h1 className="name">Amar Murmu</h1>
-          <p className="title">Web Designer & Developer</p>
-          <p className="date">{currentDate}</p>
-        </div>
-        <div className="body-image">
-          <img src={bodyImage} alt="Amar Murmu" loading="lazy" />
-        </div>
+    <div className="hero" ref={heroRef}>
+      <div className="hero-background">
+        <div className="particles-container" ref={particlesRef}></div>
+        <div className="gradient-overlay"></div>
+        <div className="grid-overlay"></div>
       </div>
+
+      <motion.div 
+        className="hero-content"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="hero-title">
+          {['Hi,', "I'm", 'Amar', 'Murmu'].map((word, index) => (
+            <span key={index} className="title-word">{word} </span>
+          ))}
+        </h1>
+        <p className="hero-subtitle">Full Stack Developer</p>
+        
+        <div className="hero-cta">
+          <motion.a 
+            href="#projects"
+            className="cta-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View My Work
+          </motion.a>
+        </div>
+      </motion.div>
     </div>
   );
 };

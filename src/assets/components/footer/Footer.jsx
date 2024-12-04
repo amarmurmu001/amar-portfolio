@@ -1,26 +1,25 @@
 import React from "react";
-import './Footer.css'
-import {FaGithub, FaTwitter} from 'react-icons/fa'
+import './Footer.css';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="footer-container">
-        <div className="left">
-          <p>&copy; {currentYear} Amar Murmu. All rights reserved.</p>
-        </div>
-        <div className="right">
-            <a href="https://github.com/amarmurmu001" target="_blank" rel="noopener noreferrer">
-              <FaGithub size={30} />
-            </a>
-            <a href="https://twitter.com/amarmurmu001" target="_blank" rel="noopener noreferrer">
-              <FaTwitter size={30} />
-            </a>
-        </div>
+        <p className="footer-text">
+          <span className="footer-icon">✨</span> 
+          Designed and created by 
+          <a 
+            href="https://github.com/amarmurmu001" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            @Amar_Murmu
+          </a> 
+          <span className="footer-icon">🚀</span>
+        </p>
       </div>
-    </div>
+    </footer>
   );
 };
 

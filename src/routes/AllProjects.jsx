@@ -53,22 +53,20 @@ const AllProjects = () => {
                     loading="lazy"
                   />
                 )}
-                <div className="project-overlay">
-                  <div className="project-content">
-                    <h2>{project.title}</h2>
-                    <p>{project.description}</p>
-                    {project.link && (
-                      <a 
-                        href={project.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="view-project-btn"
-                      >
-                        View Project <FiExternalLink />
-                      </a>
-                    )}
-                  </div>
-                </div>
+              </div>
+              <div className="project-content">
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+                {project.link && (
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="view-project-btn"
+                  >
+                    View Project <FiExternalLink />
+                  </a>
+                )}
               </div>
             </motion.article>
           ))}

@@ -7,6 +7,7 @@ import Projects from '../routes/Projects';
 import Contact from '../routes/Contact';
 import Footer from '../assets/components/footer/Footer';
 import './Portfolio.css';
+import { getStrapiImageUrl } from '../utils/strapiService';
 
 const Portfolio = () => {
   return (

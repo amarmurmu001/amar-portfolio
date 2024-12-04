@@ -1,36 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import { FiExternalLink } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import './Projects.css';
-import { fetchProjects } from '../utils/strapiService';
+import { fetchProjects, getStrapiImageUrl } from '../utils/strapiService';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-  const [selectedId, setSelectedId] = useState(null);
 
   useEffect(() => {
     const getProjects = async () => {
       const data = await fetchProjects();
-      setProjects(data);
+      if (!data) {
+        console.warn('No project data received');
+        setProjects([]);
+        return;
+      }
+      if (!Array.isArray(data)) {
+        console.warn('Project data is not an array:', data);
+        setProjects([]);
+        return;
+      }
+      // Only take the first 3 projects
+      setProjects(data.slice(0, 3));
     };
 
     getProjects();
   }, []);
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1 }
-  };
 
   return (
     <div className="projects-section">
@@ -44,54 +40,71 @@ const Projects = () => {
         Featured Projects
       </motion.h1>
       
-      <motion.div 
-        className="projects-grid"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
-        {projects.map((project, index) => (
-          <motion.div 
-            key={index}
-            className="project-card"
-            variants={item}
-            whileHover={{ y: -10 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="project-image">
-              <img
-                src={`http://localhost:1337${project.image.url}`}
-                alt={project.title}
-                loading="lazy"
-              />
-              <div className="project-overlay">
-                <div className="project-links">
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
-                      <FiGithub />
-                      <span>Code</span>
-                    </a>
-                  )}
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                    <FiExternalLink />
-                    <span>Live</span>
-                  </a>
+      <div className="projects-grid">
+        {projects?.map((project, index) => {
+          if (!project) return null;
+          
+          return (
+            <motion.div 
+              key={index}
+              className="project-card"
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                duration: 0.8,
+                ease: [0.25, 0.1, 0.25, 1.0]
+              }}
+            >
+              <motion.div 
+                className="project-image"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                {project?.image?.url && (
+                  <img
+                    src={getStrapiImageUrl(project.image.url)}
+                    alt={project.title}
+                    loading="lazy"
+                  />
+                )}
+                <div className="project-overlay">
+                  <div className="project-links">
+                    {project.link && (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                        <FiExternalLink />
+                        <span>View Project</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
 
-            <div className="project-content">
-              <h2>{project.title}</h2>
-              <p>{project.description}</p>
-              <div className="project-tech">
-                {project.technologies?.map((tech, i) => (
-                  <span key={i} className="tech-tag">{tech}</span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        ))}
+              <motion.div 
+                className="project-content"
+                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+              </motion.div>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      <motion.div 
+        className="view-all-container"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <Link to="/all-projects" className="view-all-button">
+          View All Projects
+        </Link>
       </motion.div>
     </div>
   );

@@ -1,53 +1,26 @@
 html, body {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 .portfolio {
   background-color: #fff;
-  overflow-x: hidden;
 }
 
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 5vw, 2rem);
+  padding: 0 2rem;
   width: 100%;
   box-sizing: border-box;
 }
 
 section {
-  padding: clamp(2.5rem, 5vh, 3.5rem) 0;
-  position: relative;
+  padding: 4rem 0;
 }
 
 #home {
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-#about {
-  padding-top: clamp(3rem, 6vh, 4rem);
-}
-
-#projects {
-  padding-top: clamp(3rem, 6vh, 4rem);
-  padding-bottom: clamp(3rem, 6vh, 4rem);
-}
-
-#contact {
-  padding-bottom: clamp(6rem, 10vh, 8rem);
-}
-
-/* Ensure proper spacing after hero section */
-#home + .content-wrapper {
-  margin-top: clamp(2rem, 4vh, 3rem);
+  padding-top: 0;
 }
 
 @media (max-width: 768px) {
@@ -56,29 +29,6 @@ section {
   }
 
   section {
-    padding: clamp(2rem, 4vh, 2.5rem) 0;
-  }
-
-  #home {
-    height: 100vh;
-    min-height: 600px; /* Minimum height for smaller screens */
-  }
-
-  #about {
-    padding-top: clamp(2.5rem, 5vh, 3rem);
-  }
-}
-
-@media (max-width: 480px) {
-  .content-wrapper {
-    padding: 0 0.8rem;
-  }
-  
-  section {
-    padding: 2rem 0;
-  }
-
-  #home {
-    min-height: 550px; /* Slightly smaller minimum height for mobile */
+    padding: 3rem 0;
   }
 }

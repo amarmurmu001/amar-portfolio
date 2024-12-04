@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { FiExternalLink } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import './Projects.css';
-import { fetchProjects, getStrapiImageUrl } from '../utils/strapiService';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);

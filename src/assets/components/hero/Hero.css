@@ -1,126 +1,151 @@
 .hero {
   position: relative;
-  overflow: hidden;
   height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   background-color: #fff;
 }
 
-.container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
-}
-
-.background-name {
-  position: absolute;
-  font-size: 20vw;
-  font-weight: 900;
-  opacity: 0.5;
-  z-index: 0;
-  white-space: nowrap;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.background-glitch {
-  color: transparent;
-  -webkit-text-stroke: 2px #f0f0f0;
-}
-
-.text-container {
-  z-index: 2;
-}
-
-.name {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #222222;
-}
-
-.title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #888888;
-}
-
-.date {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #222222;
-}
-
-.body-image {
-  position: relative;
-  z-index: 1;
-}
-
-.body-image img {
-  max-height: 80vh;
-  object-fit: contain;
-}
-
-.glitch-text {
-  position: relative;
-  display: inline-block;
-}
-
-.glitch-base {
-  position: relative;
-  z-index: 1;
-}
-
-.glitch-overlay {
+.hero-background {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.particles-container {
+  position: absolute;
   width: 100%;
   height: 100%;
 }
 
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #000;
+  border-radius: 50%;
+  left: var(--x);
+  top: var(--y);
+  opacity: 0;
+  animation: particle var(--duration) infinite linear;
+  animation-delay: var(--delay);
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+@keyframes particle {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(100px, -100px) scale(1);
+    opacity: 0;
+  }
+}
+
+.gradient-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.8) 70%, rgba(255,255,255,0.95) 100%);
+}
+
+.grid-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.title-word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #222;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background: #333;
+}
+
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .background-name {
-    font-size: 40vw;
-    top: 40%;
-  }
-
-  .body-image {
-    order: 2;
-    margin-bottom: 2rem;
-  }
-
-  .body-image img {
-    max-height: 50vh;
-  }
-
-  .text-container {
-    order: 3;
-  }
-
-  .name {
+  .hero-title {
     font-size: 3rem;
   }
-
-  .title {
+  
+  .hero-subtitle {
     font-size: 1.2rem;
   }
+  
+  .cta-button {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
+}
 
-  .date {
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
     font-size: 1rem;
   }
 }

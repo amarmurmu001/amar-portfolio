@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiExternalLink } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import { fetchProjects, getStrapiImageUrl } from '../utils/strapiService';
 import './Projects.css';
 
 const Projects = () => {

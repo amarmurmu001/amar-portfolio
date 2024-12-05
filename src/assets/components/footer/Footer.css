@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   background-color: var(--card-background);
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   position: relative;
   border-top: 1px solid var(--border-color);
 }
@@ -23,6 +23,7 @@
   align-items: center;
   gap: 0.5rem;
   text-align: center;
+  white-space: nowrap;
 }
 
 .footer-icon {
@@ -43,13 +44,33 @@
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: 1.2rem 0;
+  }
+
   .footer-container {
     padding: 0 1rem;
+  }
+
+  .footer-text {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0;
+  }
+
   .footer-text {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+    gap: 0.3rem;
   }
 }

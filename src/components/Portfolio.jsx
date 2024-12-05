@@ -18,18 +18,18 @@ const Portfolio = () => {
       
       <section id="home">
         <Hero />
+      <ScrollingText />
       </section>
       
-      <ScrollingText />
+        <section id="projects">
+          <Projects />
+        </section>
       
       <div className="content-wrapper">
         <section id="about">
           <About />
         </section>
         
-        <section id="projects">
-          <Projects />
-        </section>
         
         <section id="contact">
           <Contact />

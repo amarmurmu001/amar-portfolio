@@ -37,7 +37,7 @@
   --background-color: #ffffff;
   --text-color: #1a1a1a;
   --secondary-text-color: #4a4a4a;
-  --accent-color: #007bff;
+  --accent-color: #1a1a1a;
   --border-color: rgba(0, 0, 0, 0.1);
   --card-background: #ffffff;
   --overlay-background: rgba(0, 0, 0, 0.2);
@@ -67,7 +67,7 @@
   --background-color: #1a1a1a;
   --text-color: #ffffff;
   --secondary-text-color: #b3b3b3;
-  --accent-color: #3b82f6;
+  --accent-color: #ffffff;
   --border-color: rgba(255, 255, 255, 0.1);
   --card-background: #2d2d2d;
   --overlay-background: rgba(0, 0, 0, 0.4);

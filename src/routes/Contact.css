@@ -1,5 +1,6 @@
 .contact {
-  min-height: 70vh;
+  min-height: calc(100vh - 80px);
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,6 +8,9 @@
   position: relative;
   overflow: hidden;
   background-color: var(--background-color);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-bottom: -4rem;
 }
 
 .contact-content {
@@ -34,7 +38,7 @@
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background: var(--accent-color);
+  background: var(--text-color);
   border-radius: 2px;
 }
 
@@ -58,25 +62,33 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 2.5rem;
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   position: relative;
 }
 
 .contact-email:hover {
-  border-color: var(--accent-color);
-  background: var(--card-background);
+  border-color: var(--text-color);
   transform: translateY(-3px);
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
+.contact-email:hover .email-icon,
+.contact-email:hover .email-text {
+  color: var(--background-color);
 }
 
 .email-icon {
   font-size: 1.3rem;
   color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .email-text {
   font-size: 1rem;
   color: var(--text-color);
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .email-hint {
@@ -137,13 +149,14 @@
   font-weight: 500;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
 }
 
 .social-link:hover {
-  background: var(--accent-color);
+  background: var(--text-color);
   color: var(--background-color);
   transform: translateY(-2px);
+  border-color: var(--text-color);
 }
 
 .contact-background {

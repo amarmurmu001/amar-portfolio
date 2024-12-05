@@ -112,21 +112,20 @@
 .cta-button {
   display: inline-block;
   padding: 1rem 2rem;
-  background: var(--accent-color);
+  background: var(--text-color);
   color: var(--background-color);
   text-decoration: none;
   border-radius: 30px;
   font-weight: 500;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
+  border: 1px solid var(--text-color);
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px var(--border-color);
-  filter: brightness(1.1);
+  background: transparent;
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {

@@ -1,14 +1,16 @@
 .scrolling-text-container {
   overflow: hidden;
-  background-color: #f0f0f0;
+  background-color: var(--background-color);
   padding: 1rem 0;
   white-space: nowrap;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .scrolling-text {
   font-size: 2rem;
   font-weight: bold;
-  color: #222222;
+  color: var(--text-color);
   display: inline-block;
 }
 

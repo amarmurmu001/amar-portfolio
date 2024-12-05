@@ -1,25 +1,25 @@
 .about_section{
     height:100vh;
-    background-color: #f8f8f8;
+    background-color: var(--background-color);
     padding: 0 5%;
 }
 .section_2{
     display: flex;
     gap: 20px;
-    background-color: white;
+    background-color: var(--card-background);
     border-radius: 20px;
-    
+    box-shadow: 0 4px 20px var(--border-color);
 }
 .section_2 p{
     padding: 20px;
     font-size:20px;
     font-weight: bold;
-color: #222222;
+    color: var(--text-color);
 }
 .about_section h1{
     text-align: center;
     padding: 20px;
-    color: #222222;
+    color: var(--text-color);
 }
 img{
     width: 400px;
@@ -37,14 +37,14 @@ img{
   font-weight: bold;
   text-align: center;
   margin-bottom: 1rem;
-  color: #222222;
+  color: var(--text-color);
 }
 
 .slogan {
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 3rem;
-  color: #444444;
+  color: var(--secondary-text-color);
 }
 
 .bio {
@@ -58,6 +58,7 @@ img{
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 4px 20px var(--border-color);
 }
 
 .bio-text {
@@ -68,13 +69,13 @@ img{
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #222222;
+  color: var(--text-color);
 }
 
 .bio-normal {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #444444;
+  color: var(--secondary-text-color);
 }
 
 @media screen and (max-width: 768px) {

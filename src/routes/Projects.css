@@ -1,21 +1,26 @@
 .projects-section {
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--background-color);
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .section-title {
   font-size: 3.5rem;
   margin-bottom: 4rem;
   text-align: center;
-  color: #1a1a1a;
+  color: var(--text-color);
 }
 
 .projects-grid {
   display: flex;
   flex-direction: column;
   gap: 8rem;
-  max-width: 1400px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .project-card {
@@ -24,6 +29,7 @@
   gap: 4rem;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .project-card:nth-child(even) {
@@ -39,6 +45,7 @@
   overflow: hidden;
   border-radius: 8px;
   aspect-ratio: 16/9;
+  width: 100%;
 }
 
 .project-image img {
@@ -51,7 +58,7 @@
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--overlay-background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,19 +75,20 @@
 }
 
 .project-content {
-  padding: 2rem;
+  padding: 1rem;
+  width: 100%;
 }
 
 .project-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #1a1a1a;
+  color: var(--text-color);
 }
 
 .project-content p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #4a4a4a;
+  color: var(--secondary-text-color);
   margin-bottom: 2rem;
 }
 
@@ -94,12 +102,13 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 1.5rem;
-  background: white;
-  color: #1a1a1a;
+  background: var(--card-background);
+  color: var(--text-color);
   text-decoration: none;
   border-radius: 4px;
   font-weight: 500;
   transition: transform 0.3s ease;
+  border: 1px solid var(--border-color);
 }
 
 .project-link:hover {

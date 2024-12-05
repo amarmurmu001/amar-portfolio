@@ -1,9 +1,9 @@
 .footer {
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: var(--card-background);
   padding: 1rem 0;
   position: relative;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-container {
@@ -16,7 +16,7 @@
 }
 
 .footer-text {
-  color: #666;
+  color: var(--secondary-text-color);
   font-size: 0.9rem;
   margin: 0;
   display: flex;
@@ -27,10 +27,11 @@
 
 .footer-icon {
   font-size: 1rem;
+  color: var(--text-color);
 }
 
 .footer-link {
-  color: #222222;
+  color: var(--text-color);
   text-decoration: none;
   margin: 0 0.3rem;
   font-weight: 500;
@@ -38,7 +39,7 @@
 }
 
 .footer-link:hover {
-  color: #444;
+  color: var(--accent-color);
 }
 
 @media (max-width: 768px) {

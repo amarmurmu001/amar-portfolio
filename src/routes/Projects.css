@@ -179,36 +179,3 @@
     font-size: 1.5rem;
   }
 }
-
-.view-all-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 4rem;
-}
-
-.view-all-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: #1a1a1a;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.view-all-button:hover {
-  transform: translateY(-2px);
-  background-color: #333;
-}
-
-@media (max-width: 480px) {
-  .view-all-container {
-    margin-top: 2rem;
-  }
-  
-  .view-all-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
-  }
-}

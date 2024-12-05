@@ -60,7 +60,7 @@ const Hero = () => {
         transition={{ duration: 1 }}
       >
         <h1 className="hero-title">
-          {['Hi,', "I'm", 'Amar', 'Murmu'].map((word, index) => (
+          {['Hi,', "I'm", 'Amar'].map((word, index) => (
             <span key={index} className="title-word">{word} </span>
           ))}
         </h1>

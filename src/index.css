@@ -5,6 +5,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  scroll-behavior: smooth;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -51,6 +52,11 @@
   --gradient-middle: rgba(26, 26, 26, 0.8);
   --gradient-end: rgba(26, 26, 26, 0.95);
   --grid-color: rgba(255, 255, 255, 0.05);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this value based on your navbar height */
 }
 
 * {

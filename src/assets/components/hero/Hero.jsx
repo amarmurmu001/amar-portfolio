@@ -77,6 +77,10 @@ const Hero = () => {
           </motion.a>
         </div>
       </motion.div>
+
+      <div className="spline-bottom">
+        <spline-viewer url="https://prod.spline.design/4K3OvxMCmeizfT4g/scene.splinecode"></spline-viewer>
+      </div>
     </div>
   );
 };

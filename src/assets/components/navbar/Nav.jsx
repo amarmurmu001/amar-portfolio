@@ -70,9 +70,9 @@ const Nav = () => {
         {!isMobile && navMenu}
         <div className="hamburger" onClick={handleClick}>
           {click ? (
-            <FaTimes size={20} style={{ color: "#222222" }} />
+            <FaTimes size={20} style={{ color: "var(--text-color)" }} />
           ) : (
-            <FaBars size={20} style={{ color: "#222222" }} />
+            <FaBars size={20} style={{ color: "var(--text-color)" }} />
           )}
         </div>
       </div>

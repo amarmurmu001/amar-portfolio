@@ -6,37 +6,39 @@ import About from '../assets/components/about/About';
 import Projects from '../routes/Projects';
 import Contact from '../routes/Contact';
 import Footer from '../assets/components/footer/Footer';
+import LoadingScreen from '../assets/components/loading/LoadingScreen';
 import './Portfolio.css';
 import { getStrapiImageUrl } from '../utils/strapiService';
 
 const Portfolio = () => {
   return (
-    <div className="portfolio">
-      <div className="content-wrapper">
-        <Nav />
-      </div>
-      
-      <section id="home">
-        <Hero />
-      <ScrollingText />
-      </section>
-      
+    <>
+      <LoadingScreen />
+      <div className="portfolio">
+        <div className="content-wrapper">
+          <Nav />
+        </div>
+        
+        <section id="home">
+          <Hero />
+          <ScrollingText />
+        </section>
+        
         <section id="projects">
           <Projects />
         </section>
-      
-      <div className="content-wrapper">
-        <section id="about">
-          <About />
-        </section>
         
-        
-        <section id="contact">
-          <Contact />
-        </section>
+        <div className="content-wrapper">
+          <section id="about">
+            <About />
+          </section>
+          
+          <section id="contact">
+            <Contact />
+          </section>
+        </div>
       </div>
-
-    </div>
+    </>
   );
 };
 

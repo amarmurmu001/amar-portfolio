@@ -44,20 +44,29 @@ const Nav = () => {
     };
   }, []);
 
+  const menuItems = [
+    { id: 'home', text: 'Home' },
+    { id: 'projects', text: 'Projects' },
+    { id: 'about', text: 'About' },
+    { id: 'contact', text: 'Contact' }
+  ];
+
   const navMenu = (
     <ul className={click ? "nav-menu active" : "nav-menu"}>
-      <li onClick={() => scrollToSection('home')}>
-        <a href="#home">Home</a>
-      </li>
-      <li onClick={() => scrollToSection('projects')}>
-        <a href="#projects">Projects</a>
-      </li>
-      <li onClick={() => scrollToSection('about')}>
-        <a href="#about">About</a>
-      </li>
-      <li onClick={() => scrollToSection('contact')}>
-        <a href="#contact">Contact</a>
-      </li>
+      {menuItems.map((item, index) => (
+        <li 
+          key={item.id} 
+          onClick={() => scrollToSection(item.id)}
+          style={{ '--i': index + 1 }}
+        >
+          <a 
+            href={`#${item.id}`}
+            data-text={item.text}
+          >
+            {item.text}
+          </a>
+        </li>
+      ))}
     </ul>
   );
 

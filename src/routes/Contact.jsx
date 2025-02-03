@@ -5,7 +5,7 @@ import './Contact.css';
 
 const Contact = () => {
   const emailRef = useRef(null);
-  const email = "amarmurmu001@gmail.com";
+  const email = "itsofficialamar@gmail.com";
 
   const handleEmailClick = () => {
     navigator.clipboard.writeText(email);

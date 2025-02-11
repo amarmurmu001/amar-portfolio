@@ -13,7 +13,7 @@ const Projects = () => {
       description: "An AI-powered script generation tool that helps content creators and writers develop engaging narratives. Features include dynamic script formatting, real-time collaboration, and customizable templates for various content types.",
       image: scriptImg,
       link: "https://script-generator-iota.vercel.app/",
-      github: "https://github.com/yourusername/scriptgenius"
+      github: "https://github.com/amarmurmu001/scriptgenius"
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const Projects = () => {
       description: "A comprehensive platform for college alumni to connect, network, and stay updated with their alma mater. Features include event management, member directory, donation portal, and interactive discussion forums.",
       image: alumniImg,
       link: "https://alumni-frontend-five.vercel.app/",
-      github: "https://github.com/yourusername/alumni-association"
+      github: "https://github.com/amarmurmu001/alumni-association"
     }
   ];
 

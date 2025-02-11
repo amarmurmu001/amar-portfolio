@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Portfolio from './components/Portfolio';
 import LeetCodePage from './routes/LeetCodePage';
+import Services from './routes/Services';
 import { ThemeProvider } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import SEO from './components/SEO';
@@ -29,6 +30,16 @@ function App() {
               keywords="LeetCode, coding problems, algorithms, data structures, programming"
             />
             <LeetCodePage />
+          </>
+        } />
+        <Route path="/services" element={
+          <>
+            <SEO 
+              title="Services | Amar Murmu"
+              description="Professional web design and development services. Custom websites, web applications, and UI/UX design solutions."
+              keywords="web design services, web development, UI/UX design, custom websites, freelance developer"
+            />
+            <Services />
           </>
         } />
       </Routes>

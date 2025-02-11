@@ -224,4 +224,118 @@
     .stat-card p {
         font-size: 2rem;
     }
+}
+
+.twitter-section {
+    background: rgba(var(--background-color-rgb), 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 3rem;
+    backdrop-filter: blur(10px);
+    animation: slide-up 0.5s ease-out;
+    border: 1px solid rgba(var(--text-color-rgb), 0.1);
+}
+
+.twitter-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.twitter-icon {
+    color: #1DA1F2;
+    font-size: 1.8rem;
+}
+
+.tweets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tweet-card {
+    background: var(--card-background);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(var(--border-rgb), 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tweet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tweet-text {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.tweet-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(var(--border-rgb), 0.1);
+}
+
+.tweet-date {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.tweet-link {
+    color: #1DA1F2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tweet-link:hover {
+    color: #0c85d0;
+}
+
+@media (max-width: 768px) {
+    .twitter-section {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .twitter-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .tweets-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tweet-card {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .twitter-section {
+        padding: 1rem;
+    }
+
+    .twitter-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .tweet-text {
+        font-size: 0.95rem;
+    }
 } 

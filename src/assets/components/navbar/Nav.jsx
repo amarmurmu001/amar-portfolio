@@ -75,6 +75,7 @@ const Nav = () => {
     { id: 'projects', text: 'Projects', type: 'scroll' },
     { id: 'about', text: 'About', type: 'scroll' },
     { id: 'contact', text: 'Contact', type: 'scroll' },
+    { id: 'services', text: 'Services', type: 'link', path: '/services' },
     { id: 'leetcode', text: 'LeetCode', type: 'link', path: '/leetcode' }
   ];
 

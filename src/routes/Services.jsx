@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Services.css';
-import { FiCode, FiLayout, FiGrid, FiMonitor, FiPenTool, FiPackage, FiArrowRight } from 'react-icons/fi';
+import { FiCode, FiLayout, FiGrid, FiMonitor, FiPenTool, FiPackage, FiArrowRight, FiStar } from 'react-icons/fi';
 
 const Services = () => {
   const services = [
@@ -103,6 +103,36 @@ const Services = () => {
     }
   ];
 
+  const testimonials = [
+    {
+      id: 1,
+      name: "Priya Sharma",
+      role: "Startup Founder",
+      location: "Bangalore, India",
+      image: "https://randomuser.me/api/portraits/women/1.jpg",
+      text: "Working with Amar was a fantastic experience. He delivered our startup's website ahead of schedule and the design exceeded our expectations. His attention to detail and understanding of modern web design trends really shows in the final product.",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "Rajesh Kumar",
+      role: "E-commerce Manager",
+      location: "Mumbai, India",
+      image: "https://randomuser.me/api/portraits/men/2.jpg",
+      text: "The e-commerce platform Amar developed for us has significantly improved our online sales. His technical expertise and responsive design approach helped us reach more customers on mobile devices.",
+      rating: 5
+    },
+    {
+      id: 3,
+      name: "Sarah Johnson",
+      role: "Marketing Director",
+      location: "New York, USA",
+      image: "https://randomuser.me/api/portraits/women/3.jpg",
+      text: "Amar's web development skills are top-notch. He created a beautiful, fast-loading website that perfectly represents our brand. His communication was clear and he was always available for updates.",
+      rating: 5
+    }
+  ];
+
   const handleOrder = (service) => {
     window.location.href = `mailto:amarmurmu001@gmail.com?subject=Order: ${service.title}&body=Hi, I'm interested in your ${service.title} service.%0D%0A%0D%0APrice: ${service.price}%0D%0ADelivery Time: ${service.deliveryTime}`;
   };
@@ -164,6 +194,34 @@ const Services = () => {
           </motion.div>
         ))}
       </motion.div>
+
+      <div className="testimonials-section">
+        <h2 className="testimonials-title">Client Testimonials</h2>
+        <div className="testimonials-grid">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.id} className="testimonial-card">
+              <div className="testimonial-header">
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.name} 
+                  className="testimonial-image"
+                />
+                <div className="testimonial-info">
+                  <h3>{testimonial.name}</h3>
+                  <p className="testimonial-role">{testimonial.role}</p>
+                  <p className="testimonial-location">{testimonial.location}</p>
+                  <div className="testimonial-rating">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <FiStar key={i} className="star-icon" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="testimonial-text">{testimonial.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

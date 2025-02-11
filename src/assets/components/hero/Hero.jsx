@@ -8,35 +8,33 @@ const Hero = () => {
   const particlesRef = useRef(null);
 
   useEffect(() => {
-    // Create particles
+    // Reduced particle count for better performance
     const particlesContainer = particlesRef.current;
-    const numParticles = 50;
+    const numParticles = 20; // Reduced from 50
 
     for (let i = 0; i < numParticles; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
       particle.style.setProperty('--x', `${Math.random() * 100}%`);
       particle.style.setProperty('--y', `${Math.random() * 100}%`);
-      particle.style.setProperty('--duration', `${2 + Math.random() * 4}s`);
-      particle.style.setProperty('--delay', `${Math.random() * 2}s`);
+      particle.style.setProperty('--duration', `${3 + Math.random() * 2}s`);
+      particle.style.setProperty('--delay', `${Math.random()}s`);
       particlesContainer.appendChild(particle);
     }
 
-    // GSAP Animation for text reveal
-    const tl = gsap.timeline();
+    // Optimized GSAP animation
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     tl.from('.hero-title span', {
-      y: 100,
+      y: 50,
       opacity: 0,
-      duration: 1,
-      ease: 'power4.out',
+      duration: 0.8,
       stagger: 0.1
     })
     .from('.hero-subtitle', {
       y: 20,
       opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, '-=0.4');
+      duration: 0.5
+    }, '-=0.3');
 
     return () => {
       while (particlesContainer.firstChild) {
@@ -57,7 +55,7 @@ const Hero = () => {
         className="hero-content"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
       >
         <h1 className="hero-title">
           {['Hi,', "I'm", 'Amar'].map((word, index) => (

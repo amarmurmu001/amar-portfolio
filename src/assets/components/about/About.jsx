@@ -9,7 +9,13 @@ const About = () => {
       <div className='slogan'>Exploring the depths of Creativity</div>
       <div className='bio'>
         <div className='profile-img'>
-          <img src={amarbg} alt="Amar Murmu" />
+          <img 
+            src={amarbg} 
+            alt="Amar Murmu" 
+            loading="lazy"
+            width="300"
+            height="300"
+          />
         </div>
         <div className='bio-text'>
           <div className='bio-headline'>Hellooo! I'm Amar Murmu..</div>

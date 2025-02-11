@@ -7,56 +7,32 @@ const LoadingScreen = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Faster loading progress
+    const timer = setInterval(() => {
       if (progress < 100) {
-        setProgress(prev => Math.min(prev + 1, 100));
+        setProgress(prev => Math.min(prev + 5, 100));
       } else {
         setLoading(false);
+        clearInterval(timer);
       }
-    }, 15);
+    }, 10);
 
-    return () => clearTimeout(timer);
+    // Cleanup
+    return () => clearInterval(timer);
   }, [progress]);
 
-  const slideUp = {
-    initial: {
-      y: 0
-    },
-    exit: {
-      y: '-100vh',
-      transition: {
-        duration: 0.8,
-        ease: [0.76, 0, 0.24, 1]
-      }
-    }
-  };
-
-  const opacity = {
-    initial: {
-      opacity: 1
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.76, 0, 0.24, 1]
-      }
-    }
-  };
+  if (!loading) return null;
 
   return (
     <motion.div 
       className="loading-screen"
-      variants={slideUp}
-      initial="initial"
-      animate={loading ? "initial" : "exit"}
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
     >
-      <motion.div 
-        className="loading-content"
-        variants={opacity}
-      >
+      <div className="loading-content">
         <div className="loading-text">
-          <span className="loading-title">Loading...</span>
+          <span className="loading-title">Loading</span>
           <span className="loading-number">{progress}%</span>
         </div>
         <div className="loading-bar-container">
@@ -65,7 +41,7 @@ const LoadingScreen = () => {
             style={{ width: `${progress}%` }}
           />
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };

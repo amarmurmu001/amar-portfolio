@@ -109,7 +109,6 @@ const Services = () => {
       name: "Priya Sharma",
       role: "Startup Founder",
       location: "Bangalore, India",
-      image: "https://randomuser.me/api/portraits/women/1.jpg",
       text: "Working with Amar was a fantastic experience. He delivered our startup's website ahead of schedule and the design exceeded our expectations. His attention to detail and understanding of modern web design trends really shows in the final product.",
       rating: 5
     },
@@ -118,7 +117,6 @@ const Services = () => {
       name: "Rajesh Kumar",
       role: "E-commerce Manager",
       location: "Mumbai, India",
-      image: "https://randomuser.me/api/portraits/men/2.jpg",
       text: "The e-commerce platform Amar developed for us has significantly improved our online sales. His technical expertise and responsive design approach helped us reach more customers on mobile devices.",
       rating: 5
     },
@@ -127,7 +125,6 @@ const Services = () => {
       name: "Sarah Johnson",
       role: "Marketing Director",
       location: "New York, USA",
-      image: "https://randomuser.me/api/portraits/women/3.jpg",
       text: "Amar's web development skills are top-notch. He created a beautiful, fast-loading website that perfectly represents our brand. His communication was clear and he was always available for updates.",
       rating: 5
     }
@@ -201,11 +198,6 @@ const Services = () => {
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="testimonial-card">
               <div className="testimonial-header">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  className="testimonial-image"
-                />
                 <div className="testimonial-info">
                   <h3>{testimonial.name}</h3>
                   <p className="testimonial-role">{testimonial.role}</p>

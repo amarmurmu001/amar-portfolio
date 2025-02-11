@@ -37,7 +37,7 @@ html, body {
 }
 
 section {
-  padding: 4rem 0;
+  padding: 2rem 0;
   position: relative;
   z-index: 1;
 }
@@ -45,6 +45,14 @@ section {
 #home {
   padding-top: 0;
   background: none;
+}
+
+#about {
+  padding-bottom: 1rem;
+}
+
+#contact {
+  padding-top: 1rem;
 }
 
 /* Remove dot pattern from hero section */
@@ -58,7 +66,15 @@ section {
   }
 
   section {
-    padding: 3rem 0;
+    padding: 1.5rem 0;
+  }
+
+  #about {
+    padding-bottom: 0.5rem;
+  }
+
+  #contact {
+    padding-top: 0.5rem;
   }
 
   /* Adjust dot pattern for mobile */

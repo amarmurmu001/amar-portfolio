@@ -7,7 +7,9 @@ const LeetCode = () => {
         easySolved: 0,
         mediumSolved: 0,
         hardSolved: 0,
-        recentQuestions: [],
+        acceptanceRate: 0,
+        contributionPoints: 0,
+        ranking: 0,
         loading: true,
         error: null
     });
@@ -23,6 +25,7 @@ const LeetCode = () => {
                     throw new Error('Failed to fetch LeetCode stats');
                 }
                 const data = await response.json();
+                console.log(data);
                 
                 setLeetCodeStats(prev => ({
                     ...prev,
@@ -30,6 +33,9 @@ const LeetCode = () => {
                     easySolved: data.easySolved || 0,
                     mediumSolved: data.mediumSolved || 0,
                     hardSolved: data.hardSolved || 0,
+                    acceptanceRate: data.acceptanceRate || 0,
+                    contributionPoints: data.contributionPoints || 0,
+                    ranking: data.ranking || 0,
                     loading: false,
                     error: null
                 }));
@@ -84,6 +90,21 @@ const LeetCode = () => {
                 <div className="stat-card hard">
                     <h3>Hard</h3>
                     <p>{leetCodeStats.hardSolved}</p>
+                </div>
+            </div>
+            
+            <div className="leetcode-additional-stats">
+                <div className="stat-card acceptance">
+                    <h3>Acceptance Rate</h3>
+                    <p>{leetCodeStats.acceptanceRate.toFixed(1)}%</p>
+                </div>
+                <div className="stat-card points">
+                    <h3>Contribution Points</h3>
+                    <p>{leetCodeStats.contributionPoints}</p>
+                </div>
+                <div className="stat-card ranking">
+                    <h3>Global Ranking</h3>
+                    <p>#{leetCodeStats.ranking.toLocaleString()}</p>
                 </div>
             </div>
             

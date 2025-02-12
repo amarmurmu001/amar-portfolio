@@ -41,6 +41,14 @@
     animation: slide-up 0.5s ease-out;
 }
 
+.leetcode-additional-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    animation: slide-up 0.5s ease-out;
+}
+
 .stat-card {
     background: rgba(var(--background-color-rgb), 0.1);
     backdrop-filter: blur(10px);
@@ -104,6 +112,18 @@
 
 .stat-card.hard {
     background: linear-gradient(135deg, rgba(255, 55, 95, 0.15), rgba(255, 89, 89, 0.15));
+}
+
+.stat-card.acceptance {
+    background: linear-gradient(135deg, rgba(46, 213, 115, 0.15), rgba(39, 174, 96, 0.15));
+}
+
+.stat-card.points {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.15));
+}
+
+.stat-card.ranking {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.15), rgba(142, 68, 173, 0.15));
 }
 
 .recent-submissions {
@@ -212,7 +232,8 @@
         font-size: 2rem;
     }
 
-    .leetcode-stats {
+    .leetcode-stats,
+    .leetcode-additional-stats {
         grid-template-columns: 1fr;
         gap: 1rem;
     }

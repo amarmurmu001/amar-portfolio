@@ -1,1 +1,174 @@
- 
+/* CSS Variables for theme colors and typography */
+:root {
+  /* Colors - Light theme */
+  --background-color-light: #ffffff;
+  --text-color-light: #1a1a1a;
+  --card-bg-light: #f8f9fa;
+  --border-color-light: rgba(0, 0, 0, 0.1);
+  --hover-color-light: rgba(0, 0, 0, 0.05);
+  --accent-color-light: #007AFF;
+  --secondary-text-light: #666666;
+
+  /* Colors - Dark theme */
+  --background-color-dark: #1a1a1a;
+  --text-color-dark: #ffffff;
+  --card-bg-dark: #2d2d2d;
+  --border-color-dark: rgba(255, 255, 255, 0.1);
+  --hover-color-dark: rgba(255, 255, 255, 0.05);
+  --accent-color-dark: #0A84FF;
+  --secondary-text-dark: #a0a0a0;
+
+  /* Default light theme variables */
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+  --card-bg: var(--card-bg-light);
+  --border-color: var(--border-color-light);
+  --hover-color: var(--hover-color-light);
+  --accent-color: var(--accent-color-light);
+  --secondary-text: var(--secondary-text-light);
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark theme class */
+.dark-theme {
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+  --card-bg: var(--card-bg-dark);
+  --border-color: var(--border-color-dark);
+  --hover-color: var(--hover-color-dark);
+  --accent-color: var(--accent-color-dark);
+  --secondary-text: var(--secondary-text-dark);
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent transition flash */
+:root:not([data-theme-loaded]) * {
+  transition: none !important;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App container */
+.app {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+p {
+  color: var(--secondary-text);
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--text-color);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-text);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  :root {
+    --font-size-4xl: 2rem;
+    --font-size-3xl: 1.75rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-xl: 1.25rem;
+    --font-size-lg: 1.125rem;
+    --spacing-3xl: 3rem;
+    --spacing-2xl: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-4xl: 1.75rem;
+    --font-size-3xl: 1.5rem;
+    --font-size-2xl: 1.25rem;
+    --font-size-xl: 1.125rem;
+    --font-size-lg: 1rem;
+    --spacing-3xl: 2.5rem;
+    --spacing-2xl: 1.5rem;
+  }
+} 

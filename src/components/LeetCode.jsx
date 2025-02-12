@@ -10,42 +10,103 @@ const LeetCode = () => {
         acceptanceRate: 0,
         contributionPoints: 0,
         ranking: 0,
+        recentSubmissions: [],
         loading: true,
         error: null
     });
 
-    // Replace with your actual LeetCode username
     const username = 'liveamar';
 
     useEffect(() => {
         const fetchLeetCodeStats = async () => {
+            // First, get the CSRF token
             try {
-                const response = await fetch(`https://leetcode-stats-api.herokuapp.com/${username}`);
+                const csrfResponse = await fetch('/leetcode-api/graphql/', {
+                    method: 'GET',
+                    credentials: 'include',
+                });
+
+                const csrfToken = csrfResponse.headers.get('x-csrftoken');
+
+                const query = `
+                    query getUserProfile($username: String!) {
+                        allQuestionsCount {
+                            difficulty
+                            count
+                        }
+                        matchedUser(username: $username) {
+                            username
+                            submitStats: submitStatsGlobal {
+                                acSubmissionNum {
+                                    difficulty
+                                    count
+                                    submissions
+                                }
+                                totalSubmissionNum {
+                                    difficulty
+                                    count
+                                    submissions
+                                }
+                            }
+                            profile {
+                                ranking
+                                reputation
+                                starRating
+                            }
+                        }
+                    }
+                `;
+
+                const response = await fetch('/leetcode-api/graphql/', {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-csrftoken': csrfToken || '',
+                        'Referer': 'https://leetcode.com',
+                    },
+                    body: JSON.stringify({
+                        query,
+                        variables: { username }
+                    })
+                });
+
                 if (!response.ok) {
-                    throw new Error('Failed to fetch LeetCode stats');
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                const data = await response.json();
-                console.log(data);
+
+                const { data } = await response.json();
                 
-                setLeetCodeStats(prev => ({
-                    ...prev,
-                    totalSolved: data.totalSolved || 0,
-                    easySolved: data.easySolved || 0,
-                    mediumSolved: data.mediumSolved || 0,
-                    hardSolved: data.hardSolved || 0,
-                    acceptanceRate: data.acceptanceRate || 0,
-                    contributionPoints: data.contributionPoints || 0,
-                    ranking: data.ranking || 0,
+                if (!data || !data.matchedUser) {
+                    throw new Error('User not found');
+                }
+
+                const submitStats = data.matchedUser.submitStats.acSubmissionNum.reduce((acc, curr) => {
+                    acc[curr.difficulty.toLowerCase()] = curr.count;
+                    return acc;
+                }, {});
+
+                const totalAc = data.matchedUser.submitStats.acSubmissionNum.reduce((sum, curr) => sum + curr.count, 0);
+                const totalSubmissions = data.matchedUser.submitStats.totalSubmissionNum.reduce((sum, curr) => sum + curr.count, 0);
+                const acceptanceRate = totalSubmissions > 0 ? (totalAc / totalSubmissions) * 100 : 0;
+
+                setLeetCodeStats({
+                    totalSolved: totalAc,
+                    easySolved: submitStats.easy || 0,
+                    mediumSolved: submitStats.medium || 0,
+                    hardSolved: submitStats.hard || 0,
+                    acceptanceRate,
+                    ranking: data.matchedUser.profile.ranking || 0,
                     loading: false,
                     error: null
-                }));
+                });
 
             } catch (error) {
                 console.error('Error fetching LeetCode stats:', error);
                 setLeetCodeStats(prev => ({
                     ...prev,
                     loading: false,
-                    error: 'Failed to load LeetCode stats'
+                    error: error.message || 'Failed to load LeetCode stats'
                 }));
             }
         };
@@ -98,22 +159,13 @@ const LeetCode = () => {
                     <h3>Acceptance Rate</h3>
                     <p>{leetCodeStats.acceptanceRate.toFixed(1)}%</p>
                 </div>
-                <div className="stat-card points">
-                    <h3>Contribution Points</h3>
-                    <p>{leetCodeStats.contributionPoints}</p>
-                </div>
                 <div className="stat-card ranking">
                     <h3>Global Ranking</h3>
                     <p>#{leetCodeStats.ranking.toLocaleString()}</p>
                 </div>
             </div>
-            
-            <div className="recent-submissions">
-                <h3>Recent Submissions</h3>
-                <p>Coming soon! This feature will show my recent LeetCode submissions.</p>
-            </div>
         </div>
     );
 };
 
-export default LeetCode; 
+export default LeetCode;

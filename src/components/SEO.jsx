@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 const SEO = ({ 
   title = "Amar Murmu | Web Designer & Full Stack Developer from India",
   description = "I'm Amar Murmu, a professional Web Designer and Full Stack Developer from India with 3+ years of experience. Expert in Figma, React.js, Node.js, and creating visually stunning, user-friendly websites. Portfolio showcasing creative web design and development projects.",
-  keywords = "Amar Murmu, amarmurmu, amar, murmu, amarcode, amar code, web designer, web developer, full stack developer, frontend developer, React developer, Node.js developer, UI/UX designer, Figma expert, Indian web designer, Indian developer, portfolio website, freelance web designer, website development, web development India, creative web designer, professional web developer, best web designer India",
+  keywords = "Amar Murmu, amarmurmu, amar, murmu, amarcode, amarcodes, amar code, web designer, web developer, full stack developer, frontend developer, React developer, Node.js developer, UI/UX designer, Figma expert, Indian web designer, Indian developer, portfolio website, freelance web designer, website development, web development India, creative web designer, professional web developer, best web designer India",
   image = "/og-image.png"
 }) => {
   const siteUrl = "https://amar-portfolio-six.vercel.app";

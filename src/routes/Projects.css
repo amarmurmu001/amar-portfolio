@@ -40,11 +40,14 @@
 }
 
 .project-card:nth-child(1) {
-  border-color: rgba(88, 216, 163, 0.4);
+  border-color: rgba(255, 102, 0, 0.767);
 }
 
 .project-card:nth-child(2) {
-  border-color: rgba(255, 159, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.815);
+}
+.project-card:nth-child(3) {
+  border-color: rgba(225, 0, 255, 0.4);
 }
 
 .project-card:hover {

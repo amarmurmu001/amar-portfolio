@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import alumniImg from '../assets/img/script.png';
 import scriptImg from '../assets/img/alumni.png';
+import votingImg from '../assets/img/voting-dapp.jpg';
+
 import './Projects.css';
 
 const Projects = () => {
@@ -22,6 +24,13 @@ const Projects = () => {
       image: alumniImg,
       link: "https://alumni-frontend-five.vercel.app/",
       github: "https://github.com/amarmurmu001/alumni-association"
+    },{
+      id: 3,
+      title: "Solana Voting Dapp",
+      description: "VotingDApp uses smart contracts deployed on the Solana blockchain to manage the entire voting process. Each proposal is stored as a unique account on the blockchain, containing all relevant information such as the proposal details, voting period, and current results.",
+      image: votingImg,
+      link: "https://voting-dapp-frontend-vert.vercel.app/",
+      github: "https://github.com/amarmurmu001/voting-dapp"
     }
   ];
 

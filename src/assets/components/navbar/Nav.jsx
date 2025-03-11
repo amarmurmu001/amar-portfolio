@@ -114,7 +114,18 @@ const Nav = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-content">
         <a href="#home" onClick={handleLogoClick} className="logo">
-          <h1>amar.</h1>
+          <div className="logo-container">
+            <h1 className="logo-text top">
+              {'amar.'.split('').map((char, index) => (
+                <span key={index} style={{ '--char-index': index }}>{char}</span>
+              ))}
+            </h1>
+            <h1 className="logo-text bottom">
+              {'amar.'.split('').map((char, index) => (
+                <span key={index} style={{ '--char-index': index }}>{char}</span>
+              ))}
+            </h1>
+          </div>
         </a>
         {!isMobile && navMenu}
         <div className="hamburger" onClick={handleClick}>

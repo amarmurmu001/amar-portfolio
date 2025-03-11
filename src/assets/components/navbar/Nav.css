@@ -72,10 +72,57 @@
   opacity: 0.8;
 }
 
-.logo h1 {
+.logo {
+  text-decoration: none;
+  display: block;
+}
+
+.logo-container {
+  position: relative;
+  overflow: hidden;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
   font-size: 1.5rem;
+  font-weight: bold;
   color: var(--text-color);
   margin: 0;
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  line-height: 1;
+}
+
+.logo-text span {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  transition-delay: calc(var(--char-index) * 0.05s);
+  line-height: 1;
+}
+
+.logo-text.top span {
+  transform: translateY(0);
+}
+
+.logo-text.bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo-text.bottom span {
+  transform: translateY(100%);
+}
+
+.logo:hover .logo-text.top span {
+  transform: translateY(-100%);
+}
+
+.logo:hover .logo-text.bottom span {
+  transform: translateY(0);
 }
 
 .hamburger {

@@ -10,7 +10,7 @@ const About = () => {
       <div className='bio'>
         <div className='profile-img'>
           <img 
-            src={amarbg} 
+            src={'https://media.licdn.com/dms/image/v2/D4D03AQHDTAYtRpbO4g/profile-displayphoto-scale_200_200/B4DZfu3cKpGsAY-/0/1752059201340?e=1757548800&v=beta&t=yzlZAyrrMgUaPJjWwo44jKZZZ5LBilteTnB6vN0zJUU'} 
             alt="Amar Murmu" 
             loading="lazy"
             width="300"

@@ -1,5 +1,5 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
+import PropTypes from 'prop-types';
 
 const SEO = ({ 
   title = "Amar Murmu | Web Designer & Full Stack Developer from India",
@@ -7,7 +7,7 @@ const SEO = ({
   keywords = "Amar Murmu, amarmurmu, amar, murmu, amarcode, amarcodes, amar code, web designer, web developer, full stack developer, frontend developer, React developer, Node.js developer, UI/UX designer, Figma expert, Indian web designer, Indian developer, portfolio website, freelance web designer, website development, web development India, creative web designer, professional web developer, best web designer India",
   image = "/og-image.png"
 }) => {
-  const siteUrl = "https://amar-portfolio-six.vercel.app";
+  const siteUrl = "https://amarcodes.in";
   const authorName = "Amar Murmu";
   const twitterHandle = "@AmarMurmu001";
   const location = "India";
@@ -157,6 +157,13 @@ const SEO = ({
       </script>
     </Helmet>
   );
+};
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  keywords: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default SEO; 

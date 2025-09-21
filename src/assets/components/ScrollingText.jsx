@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './ScrollingText.css';
 
@@ -7,9 +7,7 @@ const ScrollingText = () => {
   const textRef = useRef(null);
 
   useEffect(() => {
-    const container = containerRef.current;
     const text = textRef.current;
-    const textWidth = text.offsetWidth;
 
     gsap.set(text, { xPercent: 0 });
 
@@ -27,16 +25,16 @@ const ScrollingText = () => {
     <div className="scrolling-text-container" ref={containerRef}>
       <div className="scrolling-text" ref={textRef}>
         {items.map((item, index) => (
-          <React.Fragment key={index}>
+          <div key={index} style={{ display: 'inline' }}>
             <span className="text-item">{item}</span>
             {index !== items.length - 1 && <span className="dot">•</span>}
-          </React.Fragment>
+          </div>
         ))}
         {items.map((item, index) => (
-          <React.Fragment key={index + items.length}>
+          <div key={index + items.length} style={{ display: 'inline' }}>
             <span className="text-item">{item}</span>
             {index !== items.length - 1 && <span className="dot">•</span>}
-          </React.Fragment>
+          </div>
         ))}
       </div>
     </div>

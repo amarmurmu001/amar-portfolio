@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Portfolio from './components/Portfolio';
 import { ThemeProvider } from './context/ThemeContext';

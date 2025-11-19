@@ -1,11 +1,10 @@
-
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ],
   "redirects": [
     {
-      "source": "https://amar-portfolio-six.vercel.app/(.*)",
+      "source": "/(.*)",
       "destination": "https://amarcodes.in/$1",
       "permanent": true
     }

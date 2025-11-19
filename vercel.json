@@ -2,13 +2,6 @@
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://amarcodes.in/$1",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

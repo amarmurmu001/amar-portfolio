@@ -43,9 +43,11 @@
     transform: translate(0, 0) scale(0);
     opacity: 0;
   }
+
   50% {
     opacity: 0.8;
   }
+
   100% {
     transform: translate(100px, -100px) scale(1);
     opacity: 0;
@@ -56,11 +58,10 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, 
-    var(--gradient-start) 0%, 
-    var(--gradient-middle) 70%, 
-    var(--gradient-end) 100%
-  );
+  background: radial-gradient(circle at center,
+      var(--gradient-start) 0%,
+      var(--gradient-middle) 70%,
+      var(--gradient-end) 100%);
 }
 
 .grid-overlay {
@@ -68,7 +69,7 @@
   width: 100%;
   height: 100%;
   background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
-                    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 50px 50px;
   opacity: 0.3;
 }
@@ -132,11 +133,11 @@
   .hero-title {
     font-size: 3rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.2rem;
   }
-  
+
   .cta-button {
     padding: 0.8rem 1.6rem;
     font-size: 1rem;
@@ -147,7 +148,7 @@
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1rem;
   }
@@ -174,15 +175,15 @@
     bottom: -60px;
     height: 500px;
   }
-  
+
   .hero-title {
     font-size: 3rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.2rem;
   }
-  
+
   .cta-button {
     padding: 0.8rem 1.6rem;
     font-size: 1rem;

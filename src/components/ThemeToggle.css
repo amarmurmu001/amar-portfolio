@@ -27,9 +27,9 @@
 /* Apply transitions to all elements */
 * {
   transition: background-color 0.3s ease,
-              color 0.3s ease,
-              border-color 0.3s ease,
-              box-shadow 0.3s ease;
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Light theme */
@@ -41,15 +41,15 @@
   --border-color: rgba(0, 0, 0, 0.1);
   --card-background: #ffffff;
   --overlay-background: rgba(0, 0, 0, 0.2);
-  
+
   /* RGB values for glass effect */
   --nav-bg-rgb: 255, 255, 255;
   --border-rgb: 0, 0, 0;
-  
+
   /* Navbar specific */
   --nav-background: rgba(255, 255, 255, 0.8);
   --nav-background-scrolled: rgba(255, 255, 255, 0.95);
-  
+
   /* Hero specific */
   --gradient-start: rgba(255, 255, 255, 0.5);
   --gradient-middle: rgba(255, 255, 255, 0.8);
@@ -71,15 +71,15 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --card-background: #2d2d2d;
   --overlay-background: rgba(0, 0, 0, 0.4);
-  
+
   /* RGB values for glass effect */
   --nav-bg-rgb: 45, 45, 45;
   --border-rgb: 255, 255, 255;
-  
+
   /* Navbar specific */
   --nav-background: rgba(45, 45, 45, 0.8);
   --nav-background-scrolled: rgba(45, 45, 45, 0.95);
-  
+
   /* Hero specific */
   --gradient-start: rgba(26, 26, 26, 0.5);
   --gradient-middle: rgba(26, 26, 26, 0.8);
@@ -90,4 +90,4 @@
   --dot-color: rgba(255, 255, 255, 0.05);
   --dot-size: 1px;
   --dot-space: 30px;
-} 
+}

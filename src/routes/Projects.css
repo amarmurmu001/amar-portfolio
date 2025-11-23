@@ -46,6 +46,7 @@
 .project-card:nth-child(2) {
   border-color: rgba(255, 255, 255, 0.404);
 }
+
 .project-card:nth-child(3) {
   border-color: rgba(225, 0, 255, 0.4);
 }

@@ -17,15 +17,18 @@
   --background-color: #ffffff;
   --text-color: #1a1a1a;
   --secondary-text-color: #4a4a4a;
-  --accent-color: #007bff;
+  --accent-color: #333333;
+  /* Dark gray for light mode */
   --border-color: rgba(0, 0, 0, 0.1);
   --card-background: #ffffff;
   --overlay-background: rgba(0, 0, 0, 0.2);
-  
+  --tech-tag-bg: rgba(0, 0, 0, 0.05);
+  --dot-shadow: rgba(0, 0, 0, 0.1);
+
   /* Navbar specific */
   --nav-background: rgba(255, 255, 255, 0.8);
   --nav-background-scrolled: rgba(255, 255, 255, 0.95);
-  
+
   /* Hero specific */
   --gradient-start: rgba(255, 255, 255, 0.5);
   --gradient-middle: rgba(255, 255, 255, 0.8);
@@ -38,15 +41,18 @@
   --background-color: #1a1a1a;
   --text-color: #ffffff;
   --secondary-text-color: #b3b3b3;
-  --accent-color: #3b82f6;
+  --accent-color: #ffffff;
+  /* White for dark mode */
   --border-color: rgba(255, 255, 255, 0.1);
   --card-background: #2d2d2d;
   --overlay-background: rgba(0, 0, 0, 0.4);
-  
+  --tech-tag-bg: rgba(255, 255, 255, 0.1);
+  --dot-shadow: rgba(255, 255, 255, 0.2);
+
   /* Navbar specific */
   --nav-background: rgba(45, 45, 45, 0.8);
   --nav-background-scrolled: rgba(45, 45, 45, 0.95);
-  
+
   /* Hero specific */
   --gradient-start: rgba(26, 26, 26, 0.5);
   --gradient-middle: rgba(26, 26, 26, 0.8);
@@ -56,7 +62,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adjust this value based on your navbar height */
+  scroll-padding-top: 80px;
+  /* Adjust this value based on your navbar height */
 }
 
 * {
@@ -65,7 +72,8 @@ html {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -107,16 +115,21 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.main{
+.main {
   position: relative;
   height: 100%;
   width: 100%;
 }
-h1, h4, p,a{
+
+h1,
+h4,
+p,
+a {
   text-decoration: none;
   color: #222222;
 }
-ul{
+
+ul {
   list-style-type: none;
   color: #222222;
 }
@@ -128,11 +141,11 @@ ul{
   line-height: 78px;
   font-size: 20px;
   font-family: 'Bebas Neue', sans-serif;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 5%, #333333 5%);
   border: 0;
   color: #fff;
   letter-spacing: 3px;
-  box-shadow: 6px 0px 0px #00E6F6;
+  box-shadow: 6px 0px 0px #ffffff;
   outline: transparent;
   position: relative;
   user-select: none;
@@ -147,7 +160,7 @@ ul{
   --slice-3: inset(10% -6px 85% 0);
   --slice-4: inset(40% -6px 43% 0);
   --slice-5: inset(80% -6px 5% 0);
-  
+
   content: 'ALTERNATE TEXT';
   display: block;
   position: absolute;
@@ -155,8 +168,8 @@ ul{
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  background: linear-gradient(45deg, transparent 3%, #ffffff 3%, #ffffff 5%, #333333 5%);
+  text-shadow: -3px -3px 0px #f0f0f0, 3px 3px 0px #ffffff;
   clip-path: var(--slice-0);
 }
 
@@ -170,48 +183,56 @@ ul{
     clip-path: var(--slice-1);
     transform: translate(-20px, -10px);
   }
+
   10% {
     clip-path: var(--slice-3);
     transform: translate(10px, 10px);
   }
+
   20% {
     clip-path: var(--slice-1);
     transform: translate(-10px, 10px);
   }
+
   30% {
     clip-path: var(--slice-3);
     transform: translate(0px, 5px);
   }
+
   40% {
     clip-path: var(--slice-2);
     transform: translate(-5px, 0px);
   }
+
   50% {
     clip-path: var(--slice-3);
     transform: translate(5px, 0px);
   }
+
   60% {
     clip-path: var(--slice-4);
     transform: translate(5px, 10px);
   }
+
   70% {
     clip-path: var(--slice-2);
     transform: translate(-10px, 10px);
   }
+
   80% {
     clip-path: var(--slice-5);
     transform: translate(20px, -10px);
   }
+
   90% {
     clip-path: var(--slice-1);
     transform: translate(-10px, 0px);
   }
+
   100% {
     clip-path: var(--slice-1);
     transform: translate(0);
   }
 }
 
-@media (min-width: 768px) {
- 
-}
+@media (min-width: 768px) {}

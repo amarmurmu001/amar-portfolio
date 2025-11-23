@@ -1,0 +1,153 @@
+.experience-container {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: var(--text-color);
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
+  z-index: 0;
+}
+
+.experience-card {
+  position: relative;
+  width: 50%;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+  z-index: 1;
+}
+
+.experience-card.left {
+  left: 0;
+  text-align: right;
+}
+
+.experience-card.right {
+  left: 50%;
+  text-align: left;
+}
+
+.experience-content {
+  background: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+}
+
+.experience-date {
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.experience-role {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-color);
+}
+
+.experience-company {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 1rem;
+}
+
+.experience-description {
+  color: var(--secondary-text-color);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.experience-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: inherit;
+}
+
+.tech-tag {
+  background: var(--tech-tag-bg);
+  color: var(--accent-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 1.5rem;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--dot-shadow);
+  z-index: 2;
+}
+
+.experience-card.left .timeline-dot {
+  right: -8px;
+}
+
+.experience-card.right .timeline-dot {
+  left: -8px;
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+  }
+
+  .experience-card {
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .experience-card.left,
+  .experience-card.right {
+    left: 0;
+    text-align: left;
+  }
+
+  .experience-card.left .timeline-dot,
+  .experience-card.right .timeline-dot {
+    left: 12px;
+    right: auto;
+  }
+
+  .experience-tech {
+    justify-content: flex-start;
+  }
+}

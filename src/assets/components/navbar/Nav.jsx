@@ -73,6 +73,7 @@ const Nav = () => {
   const menuItems = [
     { id: 'home', text: 'Home', type: 'scroll' },
     { id: 'projects', text: 'Projects', type: 'scroll' },
+    { id: 'experience', text: 'Experience', type: 'scroll' },
     { id: 'about', text: 'About', type: 'scroll' },
     { id: 'contact', text: 'Contact', type: 'scroll' }
   ];

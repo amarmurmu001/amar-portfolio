@@ -11,8 +11,8 @@ const ExperienceCard = ({ experience, index }) => {
     <motion.div 
       ref={ref}
       className={`experience-card ${index % 2 === 0 ? 'left' : 'right'}`}
-      initial={{ opacity: 0, y: 50, x: index % 2 === 0 ? -50 : 50 }}
-      animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
       <div className="experience-content">

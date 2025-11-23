@@ -5,7 +5,6 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <p className="footer-text">
-          <span className="footer-icon">✨</span>
           <span className="footer-content">
             Designed and created by
             {' '}
@@ -18,7 +17,6 @@ const Footer = () => {
               @Amar_Murmu
             </a>
           </span>
-          <span className="footer-icon">🚀</span>
         </p>
       </div>
     </footer>

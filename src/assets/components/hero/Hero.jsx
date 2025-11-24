@@ -62,7 +62,7 @@ const Hero = () => {
             <span key={index} className="title-word">{word} </span>
           ))}
         </h1>
-        <p className="hero-subtitle">21, Freelancer, Full stack developer, Learning Web3 Development.</p>
+        <p className="hero-subtitle">22, Freelancer, Full stack developer & Content creator.</p>
         
         <div className="hero-cta">
           <motion.a 

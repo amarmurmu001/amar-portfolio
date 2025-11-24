@@ -6,7 +6,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Nav = () => {
   const [click, setClick] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -16,7 +15,7 @@ const Nav = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      setClick(false); // Close mobile menu after clicking
+      setClick(false); // Close menu after clicking
     } else if (location.pathname !== '/') {
       // If we're not on the home page, navigate there first
       navigate('/', { state: { scrollTo: sectionId } });
@@ -42,16 +41,10 @@ const Nav = () => {
       }
     };
 
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -78,39 +71,6 @@ const Nav = () => {
     { id: 'contact', text: 'Contact', type: 'scroll' }
   ];
 
-  const navMenu = (
-    <ul className={click ? "nav-menu active" : "nav-menu"}>
-      {menuItems.map((item, index) => (
-        <li 
-          key={item.id} 
-          onClick={() => item.type === 'scroll' ? scrollToSection(item.id) : setClick(false)}
-          style={{ '--i': index + 1 }}
-        >
-          {item.type === 'scroll' ? (
-            <a 
-              href={`#${item.id}`}
-              data-text={item.text}
-              className={location.pathname === '/' ? '' : 'disabled'}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(item.id);
-              }}
-            >
-              {item.text}
-            </a>
-          ) : (
-            <Link 
-              to={item.path}
-              data-text={item.text}
-            >
-              {item.text}
-            </Link>
-          )}
-        </li>
-      ))}
-    </ul>
-  );
-
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-content">
@@ -128,7 +88,7 @@ const Nav = () => {
             </h1>
           </div>
         </a>
-        {!isMobile && navMenu}
+        
         <div className="hamburger" onClick={handleClick}>
           {click ? (
             <FaTimes size={20} style={{ color: "var(--text-color)" }} />
@@ -137,7 +97,37 @@ const Nav = () => {
           )}
         </div>
       </div>
-      {isMobile && navMenu}
+      
+      <ul className={click ? "nav-menu active" : "nav-menu"}>
+        {menuItems.map((item, index) => (
+          <li 
+            key={item.id} 
+            onClick={() => item.type === 'scroll' ? scrollToSection(item.id) : setClick(false)}
+            style={{ '--i': index + 1 }}
+          >
+            {item.type === 'scroll' ? (
+              <a 
+                href={`#${item.id}`}
+                data-text={item.text}
+                className={location.pathname === '/' ? '' : 'disabled'}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                }}
+              >
+                {item.text}
+              </a>
+            ) : (
+              <Link 
+                to={item.path}
+                data-text={item.text}
+              >
+                {item.text}
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };

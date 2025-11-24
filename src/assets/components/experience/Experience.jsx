@@ -33,33 +33,28 @@ const ExperienceCard = ({ experience, index }) => {
 
 const Experience = () => {
   const experiences = [
+    
     {
-      role: "Freelance Web Developer",
-      company: "Self-Employed",
-      date: "2023 - Present",
-      description: "Developing custom websites and web applications for diverse clients. Specializing in React, Node.js, and modern UI/UX design.",
-      technologies: ["React", "Node.js", "Figma", "Tailwind CSS"]
+      role: "Full Stack Developer",
+      company: "Six",
+      date: "Aug 2025 – Oct 2025",
+      description: "Full Stack Developer role focusing on React.js, Node.js and a range of modern web technologies.",
+      technologies: ["React.js", "Node.js", "Express", "MongoDB", "Docker", "AWS", "GraphQL"]
     },
     {
-      role: "Frontend Developer Intern",
-      company: "Tech Solutions Inc.",
-      date: "2022 - 2023",
-      description: "Collaborated with the design team to implement responsive user interfaces. Optimized website performance and improved accessibility.",
-      technologies: ["HTML", "CSS", "JavaScript", "React"]
+      role: "React Native Developer",
+      company: "Messoka",
+      date: "Aug 2024 – Jan 2025",
+      description: "Developed mobile applications using React Native, delivering cross‑platform experiences.",
+      technologies: ["React Native", "JavaScript", "Expo", "Firebase", "Redux", "TypeScript"]
     },
     // Add more experiences as needed
   ];
 
   return (
     <div className="experience-container">
-      <motion.h2 
-        className="section-title"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        Experience
-      </motion.h2>
+      <h2 className="section-title">Experience</h2>
+      
       <div className="timeline">
         <div className="timeline-line"></div>
         {experiences.map((exp, index) => (

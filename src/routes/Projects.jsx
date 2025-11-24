@@ -36,15 +36,12 @@ const Projects = () => {
 
   return (
     <div className="projects-section">
-      <motion.h1 
+      <h1 
         className="section-title"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+       
       >
         Featured Projects
-      </motion.h1>
+      </h1>
       
       <motion.div 
         className="projects-grid"

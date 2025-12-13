@@ -1,49 +1,57 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import alumniImg from '../assets/img/script.png';
-import scriptImg from '../assets/img/alumni.png';
-import votingImg from '../assets/img/voting-dapp.jpg';
+import React from "react";
+import { motion } from "framer-motion";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
+import alumniImg from "../assets/img/script.png";
+import scriptImg from "../assets/img/alumni.png";
+import votingImg from "../assets/img/voting-dapp.jpg";
+import t3ChatImg from "../assets/img/t3-chat.png";
 
-import './Projects.css';
+import "./Projects.css";
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
       title: "ScriptGenius",
-      description: "An AI-powered script generation tool that helps content creators and writers develop engaging narratives. Features include dynamic script formatting, real-time collaboration, and customizable templates for various content types.",
+      description:
+        "An AI-powered script generation tool that helps content creators and writers develop engaging narratives. Features include dynamic script formatting, real-time collaboration, and customizable templates for various content types.",
       image: scriptImg,
       link: "https://script-generator-iota.vercel.app/",
-      github: "https://github.com/amarmurmu001/scriptgenius"
+      github: "https://github.com/amarmurmu001/scriptgenius",
     },
     {
       id: 2,
       title: "Alumni Association",
-      description: "A comprehensive platform for college alumni to connect, network, and stay updated with their alma mater. Features include event management, member directory, donation portal, and interactive discussion forums.",
+      description:
+        "A comprehensive platform for college alumni to connect, network, and stay updated with their alma mater. Features include event management, member directory, donation portal, and interactive discussion forums.",
       image: alumniImg,
       link: "https://alumni-frontend-five.vercel.app/",
-      github: "https://github.com/amarmurmu001/alumni-association"
-    },{
+      github: "https://github.com/amarmurmu001/alumni-association",
+    },
+    {
       id: 3,
       title: "Solana Voting Dapp",
-      description: "VotingDApp uses smart contracts deployed on the Solana blockchain to manage the entire voting process. Each proposal is stored as a unique account on the blockchain, containing all relevant information such as the proposal details, voting period, and current results.",
+      description:
+        "VotingDApp uses smart contracts deployed on the Solana blockchain to manage the entire voting process. Each proposal is stored as a unique account on the blockchain, containing all relevant information such as the proposal details, voting period, and current results.",
       image: votingImg,
       link: "https://voting-dapp-frontend-vert.vercel.app/",
-      github: "https://github.com/amarmurmu001/voting-dapp"
-    }
+      github: "https://github.com/amarmurmu001/voting-dapp",
+    },
+    {
+      id: 4,
+      title: "T3-Chat",
+      description: "Currently in construction..",
+      image: t3ChatImg,
+      link: "https://t3-chat-blush.vercel.app/",
+      github: "https://github.com/amarmurmu001/t3-chat",
+    },
   ];
 
   return (
     <div className="projects-section">
-      <h1 
-        className="section-title"
-       
-      >
-        Featured Projects
-      </h1>
-      
-      <motion.div 
+      <h1 className="section-title">Featured Projects</h1>
+
+      <motion.div
         className="projects-grid"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -51,7 +59,7 @@ const Projects = () => {
         transition={{ duration: 0.6 }}
       >
         {projects.map((project) => (
-          <motion.div 
+          <motion.div
             key={project.id}
             className="project-card"
             initial={{ opacity: 0, y: 20 }}
@@ -59,23 +67,19 @@ const Projects = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div 
+            <motion.div
               className="project-image"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                loading="lazy"
-              />
+              <img src={project.image} alt={project.title} loading="lazy" />
               <div className="project-overlay">
                 <div className="project-links">
                   {project.link && (
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="project-link"
                     >
                       <FiExternalLink />
@@ -83,10 +87,10 @@ const Projects = () => {
                     </a>
                   )}
                   {project.github && (
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="project-link"
                     >
                       <FiGithub />

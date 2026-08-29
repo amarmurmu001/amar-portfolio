@@ -3,6 +3,7 @@ import Portfolio from './components/Portfolio';
 import { ThemeProvider } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import SEO from './components/SEO';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </>
         } />
       </Routes>
+      <Analytics />
     </ThemeProvider>
   );
 }
